@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Scrollbar styling for note content areas */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* Note content textarea — the "typewriter" signature element */
+  .note-editor {
+    @apply font-mono text-sm leading-relaxed text-ink bg-transparent
+           resize-none outline-none w-full;
+    tab-size: 2;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-accent text-white
+           text-sm font-medium rounded-md hover:bg-accent-hover
+           transition-colors duration-150 focus:outline-none
+           focus:ring-2 focus:ring-accent focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-3 py-2 text-ink-muted text-sm
+           font-medium rounded-md hover:bg-surface-muted hover:text-ink
+           transition-colors duration-150 focus:outline-none
+           focus:ring-2 focus:ring-ink-faint;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-red-500 text-white
+           text-sm font-medium rounded-md hover:bg-red-600
+           transition-colors duration-150 focus:outline-none
+           focus:ring-2 focus:ring-red-500 focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .input {
+    @apply w-full px-3 py-2 bg-white border border-ink-faint rounded-md
+           text-sm text-ink placeholder:text-ink-muted
+           focus:outline-none focus:ring-2 focus:ring-accent
+           focus:border-transparent transition-shadow duration-150;
+  }
+
+  .label {
+    @apply block text-xs font-medium text-ink-muted uppercase tracking-wide mb-1;
+  }
+
+  .tag-pill {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 bg-accent-subtle
+           text-amber-700 text-xs font-medium rounded-full;
+  }
+}
