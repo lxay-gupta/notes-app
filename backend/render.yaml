@@ -47,11 +47,6 @@ services:
       - key: LOG_FILE
         value: app.log
 
-databases:
-  - name: notes-db
-    region: oregon
-    plan: starter
-
   - type: redis
     name: notes-redis
     region: oregon
@@ -60,3 +55,8 @@ databases:
     ipAllowList:
       - source: 0.0.0.0/0
         description: allow all
+
+databases:
+  - name: notes-db
+    region: oregon
+    plan: starter
