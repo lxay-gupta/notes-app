@@ -47,9 +47,8 @@ services:
       - key: LOG_FILE
         value: app.log
 
-  - type: pserv
-    name: notes-db
-    runtime: postgres
+databases:
+  - name: notes-db
     region: oregon
     plan: starter
 
@@ -58,3 +57,6 @@ services:
     region: oregon
     plan: starter
     maxmemoryPolicy: allkeys-lru
+    ipAllowList:
+      - source: 0.0.0.0/0
+        description: allow all
